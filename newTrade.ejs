@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs')%>
+<h1>Start Trading</h1>
+<p>Fill out the form below to start trading!</p>
+
+<form action="/action_page.php">
+  <label for="roast">Roast Type</label><br />
+  <input type="text" id="roast" name="roast" value="" /><br /><br />
+  <label for="name">Coffee Name</label><br />
+  <input type="text" id="name" name="name" value="" /><br /><br />
+  <label for="quantity">Quantity</label><br />
+  <input type="number" id="quantity" name="quantity" value="" /><br /><br />
+  <input type="submit" value="Create Trade" /><br />
+</form>
+<!-- <div class="main-container">
+  <form action="/" method="POST">
+    <input type="text" name="inputfield" class="input-field">
+    <button type="submit">Add</button>
+  </form>
+  <h1>To Do List</h1>
+  <form action="/delete" method="POST">
+    <% for (var i = 0; i < arrlist.length; i++) {%>
+      <ul>
+        <li><%= arrlist[i] %> <button type="submit" value="<%= i %>">Delete</button></li>
+      </ul>
+    <% } %>
+  </form> -->
+<%- include('./partials/footer.ejs')%>
