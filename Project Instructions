@@ -1,0 +1,80 @@
+Description:
+
+In this assignment, you will develop a fully functional web app using the MVC pattern, according to the following specifications:
+
+Correct any errors identified in the selected HTML5 prototype before proceeding. - If your application developed in milestone 1 has errors and not complete it is your responsibility to communicate and coordinate with the instructional team to help fix those bugs. Keep in mind that you are building this application in stages. It is important that you have a working application for each stage.
+
+All structure, design, and content requirements from the previous assignment are mandatory, unless explicitly updated in this assignment description.
+
+Use JavaScript functions and literal objects to implement the business layer of the application (model).
+
+Use EJS template pages to present the view to the browser.
+
+Use modularized routes to forward the request to the appropriate controller function.
+
+Use modularized controller to control the flow of the application.
+
+
+
+Requirements:
+Create the file structure for your application.
+The file structure should follow the MVC pattern. Add app.js to your project directory and initialize the project.
+
+ 
+
+Views
+Convert existing pages to EJS templates: As an initial step, convert all 4 pages from the first assignment from HTML5 (.html) to EJS (.ejs). This is as simple as make a copy of the file with the ".ejs" extension. Define the url for each view and update the href links accordingly. 
+Create partial view templates: We want to centralize the common aspects of the views by creating partials for those common elements and then adding (include) them where we need them.
+Separate the common design elements into individual .ejs files.
+For each of the 4 main pages
+Remove the common design element content from the page
+Use the EJS include to re-include that content from the individual files.
+Update the individual trade page to support update and delete functionality: We want to be able to update or delete a trade item. Add buttons to the trade view that allow a user to update or delete that item.
+Add new view template: If not already part of the project, as a minimum add the following pages using the required site structure. 
+about.ejs – provides background and detail about the application site.
+contact.ejs – provides contact details for the application site.
+error.ejs -  provides error information.
+ 
+
+Model
+Create data objects: This assignment will use JavaScript literal objects to represent the main data elements being used. You should hard-code a fixed set of items by creating an array of JavaScript objects in item.js to represent items available for trading. As in the first assignment, you must have at least 2 categories of items, with at least 3 items per category/topic. Each item object is used to represent an item in the application. It should include the properties/attributes that define an item for trading. For example:
+item id– unique identifier for the trade-item
+item name 
+item category - this is the category/topic that will be used to select or arrange items by category or topic in the items view.
+details
+status
+image - since we did not cover file upload to server, you may store an image url for this. The image should still be rendered in the view.
+any other properties related to the domain of your trading app (e.g., author, publisher, year, condition,...)
+Define interface for data manipulation: Your model must provide an interface for manipulating the trade objects (perform CRUD operations). You will need to define functions to allow the controller module to be able to
+get all items
+get the item identified by id
+update the item identified by id
+delete the item identified by id
+You may add other utility functions if you see fit.
+
+Note: It is important to keep the big picture in perspective here. In the future, we will be converting the data storage to a database platform. We will refactor these functions to support database connectivity and query. This will separate the data layer from the application and will allow for easy updates and interaction. 
+
+ 
+
+Routes and controllers
+Routes: This component is responsible for directing all requests to proper controller function. In your application, create two route modules:
+trade route module: include a minimum of 5 RESTful routes for requests associated with trading items.
+main route module: include routes for the general site navigation, including home, contact and about. 
+Controllers: This component is responsible for handing all requests. In your application, create two controller modules:
+trade controller module: include controller functions to handle requests associated with items and trades.
+main controller module: include controller functions to handle requests associated with general site navigation.
+For some requests, the controller may simply render the view file, while for others, it will need to query the model to retrieve data, and then pass the data to the view templates. Update the view templates to replace all of the static placeholder information with the dynamic data. For example,  the view that displays all of the items should handle and display the items categories and the item titles/links dynamically. In other words, if you add another item with a new category, the application will be able to handle that without having to update or change any code and render a view that includes the new category with the new item.
+
+Remember that HTML code for all pages generated from EJS should still meet the HTML5 validation requirement. While we wont be checking for this you are encouraged to continue validating your application rendered HTML views.
+
+You can use "view page source code" in your browser to see the rendered HTML response sent by the server for each view.
+ To validate view pages launch your application > navigate to the page you wish to validate > right click > view page source > copy all > paste into validator.w3.orgLinks to an external site. 'Validate by Direct Input'. Do not forget this step before you finalize your submission!
+ 
+
+Update Links in the Site to Dispatch Correctly
+Each of the places in the site where a user can take an action that uses the dynamic data from this assignment should be updated to make the appropriate GET request with the necessary parameters. Remember that requests for resources such as links should be using GET method. Updates must be made in all appropriate places where action would reasonably be indicated from the first project prototypes. For example: the links to an item in /trade/index.ejs file will need to be dynamic to load the correct item.
+
+ 
+
+Error handling
+Part of handling these request is addressing scenarios when a request comes in that doesn't meet the requirements for these requests. The controller logic should verify and validate each request. For example, if a request comes in with an item id and that value is not for an item that exists in the item database, the controller should gracefully handle it in a way that will allow the user to continue interacting with the application. For this case, displaying the error view would be a valid response. 
