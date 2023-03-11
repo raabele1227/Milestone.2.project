@@ -3,8 +3,8 @@
 const express = require("express");
 const morgan = require("morgan");
 const methodOverride = require("method-override");
-const mainRoutes = require("./routes/mainRoutes");
-const tradeRoutes = require("./routes/tradeRoutes");
+// const mainRoutes = require("./routes/mainRoutes");
+// const tradeRoutes = require("./routes/tradeRoutes");
 
 //create app
 
