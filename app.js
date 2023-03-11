@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const methodOverride = require("method-override");
 // const mainRoutes = require("./routes/mainRoutes");
 // const tradeRoutes = require("./routes/tradeRoutes");
+var path = require('path');
 
 //create app
 
@@ -60,4 +61,5 @@ app.use((err, req, res, next) => {
 //start the server
 app.listen(port, host, () => {
   console.log("Server is running on port", port);
+  console.log(`http://localhost:${port}`);
 });
