@@ -5,7 +5,8 @@ const morgan = require("morgan");
 const methodOverride = require("method-override");
 // const mainRoutes = require("./routes/mainRoutes");
 // const tradeRoutes = require("./routes/tradeRoutes");
-var path = require('path');
+var path = require("path");
+const trades = require("./public/javascript/items");
 
 //create app
 
@@ -31,6 +32,14 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
+app.get("/contact", (req, res) => {
+  res.render("contact");
+});
+
 app.get("/trade", (req, res) => {
   res.render("trade");
 });
@@ -40,7 +49,9 @@ app.get("/newTrade", (req, res) => {
 });
 
 app.get("/trades", (req, res) => {
-  res.render("trades");
+  let items = trades.find();
+  let roasts = [...new Set(items.map((item) => item.roastType))];
+  res.render("trades", { trades: items, roasts: roasts });
 });
 
 app.use((req, res, next) => {

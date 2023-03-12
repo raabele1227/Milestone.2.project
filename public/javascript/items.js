@@ -1,4 +1,4 @@
-const tradeItem = [
+const tradeItems = [
   {
     id: "1",
     roastType: "Light",
@@ -46,7 +46,7 @@ const tradeItem = [
   },
 ];
 
-exports.find = () => tradeItem;
+exports.find = () => tradeItems;
 
 exports.findById = (id) => tradeItem.find((tradeItem) => tradeItem.id === id);
 
