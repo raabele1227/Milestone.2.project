@@ -5,8 +5,6 @@ const morgan = require("morgan");
 const methodOverride = require("method-override");
 // const mainRoutes = require("./routes/mainRoutes");
 // const tradeRoutes = require("./routes/tradeRoutes");
-var path = require("path");
-const trades = require("./public/javascript/items");
 
 //create app
 
