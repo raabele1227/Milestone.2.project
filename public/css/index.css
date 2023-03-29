@@ -6,7 +6,7 @@ header {
 }
 
 #logo {
-  height: 250px;
+  height: 500px;
   width: auto;
   padding: 1px;
 }
@@ -43,6 +43,13 @@ body {
 body img {
   height: auto;
   width: 500px;
+}
+
+body a {
+  display: block;
+  background-color: darkred;
+  padding: 15px 100px 10px 20px;
+  color: antiquewhite;
 }
 
 h1 {

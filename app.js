@@ -3,6 +3,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const methodOverride = require("method-override");
+const path = require("path");
 // const mainRoutes = require("./routes/mainRoutes");
 // const tradeRoutes = require("./routes/tradeRoutes");
 
@@ -49,7 +50,7 @@ app.get("/newTrade", (req, res) => {
 app.get("/trades", (req, res) => {
   let items = trades.find();
   let roasts = [...new Set(items.map((item) => item.roastType))];
-  res.render("trades", { trades: items, roasts: roasts });
+  res.render("/trades", { trades: items, roasts: roasts });
 });
 
 app.use((req, res, next) => {
