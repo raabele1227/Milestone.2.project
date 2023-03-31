@@ -52,9 +52,9 @@ exports.findById = (id) => tradeItems.find((tradeItem) => tradeItem.id === id);
 
 exports.updateById = function (id, newTradeItem) {
   let = tradeItems.find((tradeItem) => tradeItem.id === id);
-  if (story) {
-    story.title = newStory.title;
-    story.content = newStory.content;
+  if (tradeItem) {
+    tradeItem.coffeeName = newTradeItem.coffeeName;
+    tradeItem.roastType = newTradeItem.roastType;
     return true;
   } else {
     return false;
