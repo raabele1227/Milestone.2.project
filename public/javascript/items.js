@@ -48,10 +48,10 @@ const tradeItems = [
 
 exports.find = () => tradeItems;
 
-exports.findById = (id) => tradeItem.find((tradeItem) => tradeItem.id === id);
+exports.findById = (id) => tradeItems.find((tradeItem) => tradeItem.id === id);
 
 exports.updateById = function (id, newTradeItem) {
-  let = stories.find((story) => story.id === id);
+  let = tradeItems.find((tradeItem) => tradeItem.id === id);
   if (story) {
     story.title = newStory.title;
     story.content = newStory.content;
@@ -62,9 +62,9 @@ exports.updateById = function (id, newTradeItem) {
 };
 
 exports.deleteById = function (id) {
-  let index = tradeItem.findIndex((story) => story.id === id);
+  let index = tradeItems.findIndex((tradeItem) => tradeItem.id === id);
   if (index !== -1) {
-    stories.splice(index, 1);
+    tradeItems.splice(index, 1);
     console.log("deleted");
     return true;
   } else {
