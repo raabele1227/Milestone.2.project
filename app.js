@@ -48,9 +48,9 @@ app.get("/newTrade", (req, res) => {
 });
 
 app.get("/trades", (req, res) => {
-  let items = trades.find();
-  let roasts = [...new Set(items.map((item) => item.roastType))];
-  res.render("/trades", { trades: items, roasts: roasts });
+  let items = tradeItems.find();
+  let roasts = [...new Set(tradeItems.map((tradeItem) => tradeItem.roastType))];
+  res.render("/trades", { tradeItems: tradeItem, roastType: roasts });
 });
 
 app.use((req, res, next) => {
