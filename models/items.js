@@ -51,31 +51,32 @@ exports.find = () => tradeItems;
 
 exports.findById = (id) => tradeItems.find((tradeItem) => tradeItem.id === id);
 
-exports.updateById = function (id, newTradeItem) {
-  let = tradeItems.find((tradeItem) => tradeItem.id === id);
-  if (tradeItem) {
-    tradeItem.coffeeName = newTradeItem.coffeeName;
-    tradeItem.roastType = newTradeItem.roastType;
->>>>>>> e2ae6ddb4ceb2bb03ad726e1839263b3e0f6aea6:public/javascript/items.js
+
+exports.updateById = (id, newTradeItem) => {
+  let index = tradeItems.findIndex((tradeItem) => tradeItem.id === id);
+  if (index !== -1) {
+    tradeItems[index] = newTradeItem;
     return true;
   } else {
     return false;
   }
 };
 
+
+
+
 exports.deleteById = (id) => {
   let index = tradeItems.findIndex((tradeItem) => tradeItem.id === id);
-<<<<<<< HEAD:models/items.js
-  if (tradeItems) {
-    tradeItems.roastType = newTradeItem.roastType
-    tradeItems.coffeeName= newTradeItem.coffeeName;
-=======
   if (index !== -1) {
     tradeItems.splice(index, 1);
-    console.log("deleted");
->>>>>>> e2ae6ddb4ceb2bb03ad726e1839263b3e0f6aea6:public/javascript/items.js
     return true;
   } else {
     return false;
   }
+
 };
+exports.create = (tradeItem) => {
+  tradeItem.id = Date.now().toString();
+  tradeItems.push(tradeItem);
+};
+
