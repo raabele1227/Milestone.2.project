@@ -1,4 +1,11 @@
-const model = require("../models/items");
+ const model = require("../models/items");
+
+
+exports.index = (req, res) => {
+  res.render("./items/index");
+};
+
+
 
 
 exports.new = (req, res) => {

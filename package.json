@@ -13,7 +13,9 @@
     "http-errors": "~1.6.3",
     "method-override": "^3.0.0",
     "morgan": "~1.9.1",
-    "node-modules": "^0.0.1"
+    "node-modules": "^0.0.1",
+    "reflect-metadata": "^0.1.13",
+    "routing-controllers": "^0.10.2"
   },
   "description": "",
   "main": "app.js",
