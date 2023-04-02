@@ -1,0 +1,18 @@
+<%- include('./partials/header.ejs')%>
+<link rel="stylesheet" href="/public/css/trades.css" />
+
+<div class="roasts-container">
+  <% roasts.map(roast => { %>
+  <div class="roast-card">
+    <div class="roast-title"><%= roast %></div>
+    <div class="roast-card-trades">
+      <% tradeItems.filter(tradeItems => tradeItems.roastType ===
+      roast).map(tradeItems.coffeeName => { %>
+      <div><%= tradeItems.coffeeName %></div>
+      <% }); %>
+    </div>
+  </div>
+  <% }); %>
+</div>
+
+<%- include('./partials/footer.ejs')%>

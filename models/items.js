@@ -46,12 +46,13 @@ const tradeItems = [
   },
 ];
 
+
 exports.find = () => tradeItems;
 
 exports.findById = (id) => tradeItems.find((tradeItem) => tradeItem.id === id);
 
-exports.updateById = function (id, newTradeItem) {
-  let = tradeItems.find((tradeItem) => tradeItem.id === id);
+exports.updateById = (id, newTradeItem) => {
+  let tradeItem = tradeItems.find((tradeItem) => tradeItem.id === id);
   if (tradeItem) {
     tradeItem.coffeeName = newTradeItem.coffeeName;
     tradeItem.roastType = newTradeItem.roastType;
@@ -61,7 +62,7 @@ exports.updateById = function (id, newTradeItem) {
   }
 };
 
-exports.deleteById = function (id) {
+exports.deleteById = (id) => {
   let index = tradeItems.findIndex((tradeItem) => tradeItem.id === id);
   if (index !== -1) {
     tradeItems.splice(index, 1);
@@ -71,4 +72,9 @@ exports.deleteById = function (id) {
     console.log("not deleted");
     return false;
   }
+};
+
+exports.create = (tradeItem) => {
+  tradeItem.id = Date.now().toString();
+  tradeItems.push(tradeItem);
 };

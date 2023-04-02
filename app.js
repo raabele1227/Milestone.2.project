@@ -4,8 +4,17 @@ const express = require("express");
 const morgan = require("morgan");
 const methodOverride = require("method-override");
 const path = require("path");
-// const mainRoutes = require("./routes/mainRoutes");
-// const tradeRoutes = require("./routes/tradeRoutes");
+
+
+
+
+//require controllers
+const tradeController = require("./controllers/tradeController");
+const mainController = require("./controllers/mainController");
+
+//require routes
+const mainRoutes = require("./routes/mainRoute");
+const tradeRoutes = require("./routes/tradeRoute");
 
 //create app
 
@@ -22,9 +31,11 @@ app.set("view engine", "ejs");
 //mount middleware
 
 app.use(express.static("public"));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
 app.use(methodOverride("_method"));
+
 
 //set up routes
 app.get("/", (req, res) => {
@@ -47,10 +58,10 @@ app.get("/newTrade", (req, res) => {
   res.render("newTrade");
 });
 
-app.get("/trades", (req, res) => {
+app.get('/trades', (req, res) => {
   let items = tradeItems.find();
   let roasts = [...new Set(tradeItems.map((tradeItem) => tradeItem.roastType))];
-  res.render("/trades", { tradeItems: tradeItem, roastType: roasts });
+  res.render("trades", { tradeItems: tradeItem, roastType: roasts });
 });
 
 app.use((req, res, next) => {
@@ -64,6 +75,7 @@ app.use((err, req, res, next) => {
     err.status = 500;
     err.message = "Internal Server Error";
   }
+  res.locals.error = err;
   res.status(err.status);
   res.render("error", { error: err });
 });

@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "development"
+  ],
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 110",
+    "not and_ff <= 110"
+  ],
+  "hints": {
+    "detect-css-reflows/composite": "off",
+    "detect-css-reflows/paint": "off",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "text-decoration-skip-ink"
+        ]
+      }
+    ]
+  }
+}

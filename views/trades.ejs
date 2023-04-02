@@ -1,12 +1,22 @@
+
 <%- include('./partials/header.ejs')%>
 
 <div class="roasts-container">
+  <
+    <% roasts.map(roast => { %>
+      <option value="<%= roast %>"><%= roast %></option>
+    <% }); %>
+  </select>
+  <button id="filter-roast">Filter</button>
+</div>
+
   <% roasts.map(roast => { %>
   <div class="roast-card">
     <div class="roast-title"><%= roast %></div>
     <div class="roast-card-trades">
       <% trades.filter(trade => trade.roastType === roast).map(trade => { %>
       <div><%= trade.coffeeName %></div>
+      <
       <% }); %>
     </div>
   </div>
