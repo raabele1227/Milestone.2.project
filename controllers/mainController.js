@@ -1,19 +1,19 @@
-exports.index = (req, res) => {
+export function index(req, res) {
   "/", controller.index;
   res.render("index");
-};
+}
 
-exports.trade = (req, res) => {
+export function trade(req, res) {
   "/trade", controller.trade;
   res.render("trade");
-};
+}
 
-exports.newTrade = (req, res) => {
+export function newTrade(req, res) {
   "/newTrade", controller.newTrade;
   res.render("newTrade");
-};
+}
 
-exports.trades = (req, res) => {
+export function trades(req, res) {
   "/trades", controller.trades;
   res.render("trades");
-};
+}

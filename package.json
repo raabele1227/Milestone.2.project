@@ -1,25 +1,30 @@
 {
-  "name": "trade_project",
-  "version": "1.0.0",
-  "description": "description",
-  "main": "app.js",
+  "name": "milestone.2.project",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "node app"
+    "start": "node ./bin/www"
   },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.3",
+    "method-override": "^3.0.0",
+    "morgan": "~1.9.1",
+    "node-modules": "^1.0.1"
+  },
+  "description": "",
+  "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NadiaNajjar-CCI/trade_project-raabele1227.git"
+    "url": "git+https://github.com/raabele1227/Milestone.2.project.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NadiaNajjar-CCI/trade_project-raabele1227/issues"
+    "url": "https://github.com/raabele1227/Milestone.2.project/issues"
   },
-  "homepage": "https://github.com/NadiaNajjar-CCI/trade_project-raabele1227#readme",
-  "dependencies": {
-    "ejs": "^3.1.8",
-    "express": "^4.18.2",
-    "method-override": "^3.0.0",
-    "morgan": "^1.10.0"
-  }
+  "homepage": "https://github.com/raabele1227/Milestone.2.project#readme"
 }
