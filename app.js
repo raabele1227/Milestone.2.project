@@ -25,15 +25,20 @@ const app = express();
 
 app.set("views", path.join(__dirname, "views"));
 
+
 //configure app
 
 let port = 3000;
 let host = "localhost";
 app.set("view engine", "ejs");
 
-//mount middleware
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.static("public"));
+
+
+
+
+//mount middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
